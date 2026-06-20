@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Dark theme (default) ── */
+:root, :root.dark {
+  --bg-base: #09090b;
+  --bg-surface: #18181b;
+  --bg-elevated: #27272a;
+  --border: #3f3f46;
+  --border-subtle: #27272a;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+}
+
+/* ── Light theme ── */
+:root.light {
+  --bg-base: #f5f3ff;
+  --bg-surface: #ffffff;
+  --bg-elevated: #ede9fe;
+  --border: #ddd6fe;
+  --border-subtle: #ede9fe;
+  --text-primary: #1e1b4b;
+  --text-secondary: #4c1d95;
+  --text-muted: #6d28d9;
+}
+
+/* Dark body */
+:root.dark body, body {
+  background-color: #09090b;
+  color: #f4f4f5;
+}
+
+/* Light body — subtle violet gradient */
+:root.light body {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 40%, #faf5ff 100%);
+  background-attachment: fixed;
+  color: #1e1b4b;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #7c3aed33; border-radius: 999px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #7c3aed66; }
